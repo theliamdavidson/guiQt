@@ -18,6 +18,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
 from PySide6.QtWidgets import (QApplication, QLabel, QMainWindow, QMenuBar,
     QProgressBar, QPushButton, QSizePolicy, QStatusBar,
     QWidget)
+import vessel_math
+import capture_ocr
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -29,15 +31,19 @@ class Ui_MainWindow(object):
         self.confirmButton = QPushButton(self.centralwidget)
         self.confirmButton.setObjectName(u"confirmButton")
         self.confirmButton.setGeometry(QRect(330, 360, 141, 91))
+
         self.skipButton = QPushButton(self.centralwidget)
         self.skipButton.setObjectName(u"skipButton")
         self.skipButton.setGeometry(QRect(480, 360, 141, 91))
+
         self.quitButton = QPushButton(self.centralwidget)
         self.quitButton.setObjectName(u"quitButton")
         self.quitButton.setGeometry(QRect(844, 20, 141, 81))
+
         self.pushButton_4 = QPushButton(self.centralwidget)
         self.pushButton_4.setObjectName(u"pushButton_4")
         self.pushButton_4.setGeometry(QRect(844, 120, 141, 81))
+
         self.dataShowLabel = QLabel(self.centralwidget)
         self.dataShowLabel.setObjectName(u"dataShowLabel")
         self.dataShowLabel.setGeometry(QRect(330, 280, 141, 71))
@@ -45,6 +51,7 @@ class Ui_MainWindow(object):
         font.setPointSize(28)
         self.dataShowLabel.setFont(font)
         self.dataShowLabel.setAlignment(Qt.AlignCenter)
+
         self.vesselNameLabel = QLabel(self.centralwidget)
         self.vesselNameLabel.setObjectName(u"vesselNameLabel")
         self.vesselNameLabel.setGeometry(QRect(480, 280, 141, 71))
@@ -52,6 +59,7 @@ class Ui_MainWindow(object):
         font1.setPointSize(12)
         self.vesselNameLabel.setFont(font1)
         self.vesselNameLabel.setAlignment(Qt.AlignCenter)
+        
         self.vesselProgressBar = QProgressBar(self.centralwidget)
         self.vesselProgressBar.setObjectName(u"vesselProgressBar")
         self.vesselProgressBar.setGeometry(QRect(10, 10, 151, 31))
@@ -67,6 +75,10 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         self.quitButton.clicked.connect(MainWindow.close)
+        self.quitButton.clicked.connect(MainWindow.close)
+        self.quitButton.clicked.connect(MainWindow.close)
+        self.quitButton.clicked.connect(MainWindow.close)
+
 
         QMetaObject.connectSlotsByName(MainWindow)
     # setupUi
